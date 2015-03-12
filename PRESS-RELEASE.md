@@ -17,27 +17,22 @@ Once the project moves into development, the press release can be used as a touc
  -->
 
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
-  Marginal.io
+  > Marginal.io
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-  Collaborative annotation
+  > Collaborative annotation
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-  A platform that allows you and your friends to comment together on articles.
+  > A platform that allows you and your friends to comment together on articles.
 
 ## Problem ##
-  > Describe the problem your product solves.
-    - comments on articles typically go at the end, rather than in line, which removes them from their proper context
+  > - comments on articles typically go at the end, rather than in line, which removes them from their proper context
       - typical comment sections seperate comments from content
     - article comment sections are open to the whole internet, but you're not interested in the whole internet's opinion
 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
-  - Connect your comment to a particular point on the page
+  > - Connect your comment to a particular point on the page
   - Collect you and your friends' comments
   - an alternative to long comment threads
   - restrict comments to a group whose opinions you value
@@ -45,17 +40,13 @@ Once the project moves into development, the press release can be used as a touc
 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
-  "Reading will never be the same!" -David "D" Hammer, Ph."D"
+  > "Reading will never be the same!" -David "D" Hammer, Ph."D"
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
-  "User interfaces will never be the same!" -Michael "M" Roberts, "M".S.
+  > "User interfaces will never be the same!" -Michael "M" Roberts, "M".S.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-  "This keeps my inbox clean and my mind sharp." -Anonymous
+  > "This keeps my inbox clean and my mind sharp." -Anonymous
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
-  To arms, my friends! Grab your guns and head for the hills #FongJohnson2016
+  > To arms, my friends! Grab your guns and head for the hills #FongJohnson2016
