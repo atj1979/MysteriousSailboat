@@ -14,7 +14,7 @@
     1. [Make a pull request](#make-a-pull-request)
     1. [Guidelines](#guidelines)
 1. [Workflow Summary](#workflow-summary)
-1. [Checklist](#Checklist)
+1. [Checklist](#checklist)
 
 
 Note:  Our project uses the many-branched git-workflow, it is recommended you add you current git-branch to your command-line.
