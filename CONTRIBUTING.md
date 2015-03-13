@@ -14,11 +14,11 @@
     1. [Make a pull request](#make-a-pull-request)
     1. [Guidelines](#guidelines)
 1. [Workflow Summary](#workflow-summary)
-1. [Checklist](#Checklist)
+1. [Checklist](#Checklist:)
 
 
 Note:  Our project uses the many-branched git-workflow, it is recommended you add you current git-branch to your command-line.
-  If you use bash look [here][http://code-worrier.com/blog/git-branch-in-bash-prompt/].
+  If you use bash look [here](http://code-worrier.com/blog/git-branch-in-bash-prompt/).
   Command line examples will include the faux bash command line: (Current_Branch)$
 
 ## General Workflow
@@ -62,14 +62,14 @@ git remote add upstream https://github.com/<SOURCE_OF_REPO>/<NAME_OF_REPO>.git
 
 ### Be aware of your branch
 
-We are using the Git Workflow seen [here][https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow] and [here][http://nvie.com/posts/a-successful-git-branching-model/].  In summary:
+We are using the Git Workflow seen [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) and [here](http://nvie.com/posts/a-successful-git-branching-model/).  In summary:
 
   - Branch master is always in a deployable state.
   - Branch develop is where most work is done.
     - Most work will be done off of the develop branch, this is where you will create most of your branches.
       (i.e., feature branches, bugfix branches, test branches, etc...)
 
-### Cut a namespaced feature branch from develop
+### Cut a namespaced branch from develop
 
 Your branch should follow this naming convention:
   - bug/...
@@ -114,7 +114,7 @@ A commit should be short, and include only *one logical change*.
   be a blank line and then a more detailed description of the commit. This can be
   as detailed as you want, so dig into details here and keep the first line short.
 
-[More information][http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html]
+[More information](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 
 ### Rebase upstream changes into your branch
 
@@ -163,7 +163,7 @@ If rebasing broke anything, fix it, then repeat the above process until
 you get here again and nothing is broken and all the tests pass.
 
 ### Get your feature implemented into the development branch
-[(Ensure that you rebased your code onto upstream before doing this!)][#rebase-upstream-changes-into-your-branch]
+[(Ensure that you rebased your code onto upstream before doing this!)](#rebase-upstream-changes-into-your-branch)
 
 Rebase your branch onto development.  This creates a cleaner commit history than using a merge.
 
@@ -212,8 +212,8 @@ Thanks for contributing!
 ### Guidelines
 
 1. Uphold the current code standard:
-    - Keep your code [DRY][].
-    - Apply the [boy scout rule][].
+    - Keep your code DRY
+    - Apply the boy scout rule.
     - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
 1. Run the [tests][] before submitting a pull request.
 1. Tests are very, very important. Submit tests if your pull request contains
