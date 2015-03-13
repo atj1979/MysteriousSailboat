@@ -20,7 +20,7 @@ app.configure(function() {
 // Map routes utilizing request-handler.js
 
 // Serve the index page when the user navigates to 
-app.get('/', /*util.checkUser,*/ handler.renderIndex); // check user would go here for authentication
+app.get('/', /*util.checkUser,*/ handler.renderIndex); // checkUser would go here for authentication
 
 // Export the server configuration
 module.exports = app;
