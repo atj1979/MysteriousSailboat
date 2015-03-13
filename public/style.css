@@ -20,15 +20,15 @@ h1 {
   margin-top: 10px;
 }
 
+.paragraph-container {
 
-form {
-  margin: 10px;
 }
 
-form input[type=text], form input[type=password] {
-  width: 360px;
-  display: block;
-  font-size: 13px;
-  padding: 5px;
-  margin-bottom: 5px;
+.paragraph:hover{
+  background-color: yellow
+}
+
+.paragraph {
+  float: left;
+  margin: 20px;
 }
