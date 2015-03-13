@@ -13,7 +13,7 @@ app.configure(function() {
   app.use(partials());
   app.use(express.bodyParser());
   // app.use(express.static(__dirname + '/public')); // this assumes all client files are in a folder named public
-  app.use(express.session());
+  // app.use(express.session());
 
 });
 
