@@ -24,7 +24,7 @@ Note:  Our project uses the many-branched git-workflow, it is recommended you ad
 ## General Workflow
 
 1. Fork the repo
-1. Cut a namespaced feature branch from master
+1. Cut a namespaced branch from develop
   - bug/...
   - feat/...
   - test/...
@@ -33,7 +33,7 @@ Note:  Our project uses the many-branched git-workflow, it is recommended you ad
 
   e.g., "git checkout -b feat/linksView"
 
-1. Make commits to your feature branch. Prefix each commit like so:
+1. Make commits to your namespaced branch. Prefix each commit like so:
   - (feat) Added a new feature
   - (fix) Fixed inconsistent tests [Fixes #0]
   - (refactor) ...
