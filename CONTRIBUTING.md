@@ -14,7 +14,7 @@
     1. [Make a pull request](#make-a-pull-request)
     1. [Guidelines](#guidelines)
 1. [Workflow Summary](#workflow-summary)
-1. [Checklist](#Checklist:)
+1. [Checklist](#Checklist)
 
 
 Note:  Our project uses the many-branched git-workflow, it is recommended you add you current git-branch to your command-line.
@@ -269,7 +269,7 @@ Then push to your personal repo:
 Finally, create a pull request.  Ensure that you are going from your repo's relevant branch to
 the upstream repo's relevant branch.
 
-## Checklist:
+## Checklist
 
 This is just to help you organize your process
 
