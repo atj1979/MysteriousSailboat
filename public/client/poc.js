@@ -12,7 +12,14 @@ var Annotations = Backbone.Collection.extend({
   model: Annotation
 });
 var AnnotationsView = Backbone.View.extend({
+  className: 'annotations',
 
+  render: function() {
+    this.$el.html('<textarea rows="4" cols="50">\
+                    Comments go here\
+                    </textarea>');
+    return this;
+  }
 });
 
 var Paragraph = Backbone.Model.extend({
@@ -23,9 +30,18 @@ var Paragraph = Backbone.Model.extend({
 });
 var ParagraphView = Backbone.View.extend({
   className: 'paragraph',
-  template: _.template('<%= text %>'),
+  template: _.template('<div class="body-text"><%= text %></div>'),
+  initialize: function(){
+    this.annotationsView = new AnnotationsView({collection: this.model.get('annotations')});
+  },
+  events: { 'click p' : 'clicked'},
+  clicked: function(){
+    this.$el.toggleClass('focus');
+    this.annotationsView.render();
+  },
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
+    this.$el.append(this.annotationsView.$el);
     return this;
   }
 

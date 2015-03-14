@@ -24,11 +24,19 @@ h1 {
 
 }
 
-.paragraph:hover{
+.paragraph p:hover{
   background-color: yellow
 }
 
 .paragraph {
   float: left;
   margin: 20px;
+}
+
+.annotations {
+  float: right;
+}
+
+.hidden {
+  visibility: hidden;
 }
