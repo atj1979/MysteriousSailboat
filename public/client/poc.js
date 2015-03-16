@@ -1,5 +1,5 @@
 var mockLoggedInUser = "Fred";
-
+var converter = new Showdown.converter();
 var Annotation = Backbone.Model.extend({
   url: 'http://www.oururl.com/annotations/',
   defaults: {
@@ -9,7 +9,7 @@ var Annotation = Backbone.Model.extend({
 });
 var AnnotationView = Backbone.View.extend({
   className: 'annotation',
-  template: _.template('user: <%- username %>, comment: <%- text %>'),
+  template: _.template('<%= text %>-<%- username %>'),
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
     return this;
@@ -73,10 +73,9 @@ var FormView = Backbone.View.extend({
       return ;
     }
 
-
     this.collection.create({
       username: mockLoggedInUser,
-      text: $text.val()
+      text: converter.makeHtml($text.val())
     });
     $text.val('');
   },
