@@ -1,14 +1,22 @@
 body {
-  margin: 0;
-  margin-top: 10px;
-  font-family: arial, sans-serif;
+  margin: 5%;
+  font-family: Garamond, Baskerville, serif;
+  font-size:20px;
+  line-height:1.5em;
 }
 
 a {
   color: #333;
-  font-size: 14px;
+  text-decoration: none;
+  font-variant: small-caps;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
   text-decoration: none;
 }
+
 
 h1 {
   font-style: italic;
@@ -24,19 +32,35 @@ h1 {
 
 }
 
-.paragraph p:hover{
-  background-color: yellow
+.body-text :hover{
+  background-color: #E6EBFA;
 }
 
 .paragraph {
-  float: left;
-  margin: 20px;
+ 
 }
 
-.annotations {
+textarea {
+    height: 4em;
+    width: 100%;
+    padding: 3px;
+}
+
+
+.annotations-container {
   float: right;
+  width: 35%;
+  padding-left: 3%;
+  border-left: 2px solid black;
 }
 
-.hidden {
-  visibility: hidden;
+.body-text  {
+  float:left;
+  width: 55%;
+  padding-right: 3%;
+  /*border-right: 2px solid black;*/
+}
+
+.has-annotations {
+  border-right: 2px solid black;
 }
