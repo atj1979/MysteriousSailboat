@@ -38,10 +38,16 @@ var AnnotationsView = Backbone.View.extend({
       this.render();
     }, this)
     this.collection.on('show', function(){
+      this.$el.animate({opacity: 1}, 'fast');
       this.render();
     }, this);
     this.collection.on('hide', function(){
       this.$el.html('');
+      this.$el.css({opacity: 0});
+
+      // this.$el.animate({opacity: 0}, 200, function(){ 
+      //   this.$el.html('');
+      // }.bind(this));  
     }, this);
   },
   render: function(){
@@ -86,13 +92,14 @@ var FormView = Backbone.View.extend({
 
 var ParagraphView = Backbone.View.extend({
   className: 'paragraph',
-  template: _.template('<div class="count"><%= annotations.length %></div><div class="body-text"><%= text %></div>'),
+  template: _.template('<div class="count"></div><div class="body-text"><%= text %></div>'),
   initialize: function(){
     var annotations = this.model.get('annotations');
     this.annotationsView = new AnnotationsView({collection: annotations});
 
     annotations.on('add remove', function(){
-      this.$el.find('.count').text(this.model.get('annotations').length);
+      this.$el.find('.count').text(this.model.get('annotations').length)
+                             .animate({opacity: 1}, 'fast');
     }, this);
 
   },
