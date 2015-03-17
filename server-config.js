@@ -22,8 +22,13 @@ app.configure(function() {
 // Serve the index page when the user navigates to 
 app.get('/', util.checkUser, handler.renderIndex);
 
+// login page routing
 app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
+
+// signup page routing
+app.get('/signup', handler.signupUserForm);
+app.post('/signup', handler.signupUser);
 
 // Export the server configuration
 module.exports = app;
