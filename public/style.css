@@ -54,6 +54,10 @@ body {
   font-size:20px;
   line-height:1.5em;
 }
+em {
+  font-style: italic;
+}
+
 h1, h2 {
   font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
   margin-bottom: 1em;

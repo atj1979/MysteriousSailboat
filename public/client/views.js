@@ -96,7 +96,7 @@ var ParagraphView = Backbone.View.extend({
     }, this);
 
   },
-  events: { 'click p' : 'clicked'},
+  events: { 'click' : 'clicked'},
 
   clicked: function(){
     //paragraph emits a focus event
@@ -110,7 +110,7 @@ var ParagraphView = Backbone.View.extend({
     $ (function(){ 
       var neighborHeight = this.$el.find('.body-text').height();
       this.$el.find('.count').animate( {
-                                         top: neighborHeight / 2 - 20,
+                                         top: neighborHeight / 2 - 14,
                                          left: -22
                                        }, 0 );
     }.bind(this))
@@ -148,14 +148,11 @@ var ParagraphsView = Backbone.View.extend({
 });
 
 var DocumentView = Backbone.View.extend({
-  tagName: 'div',
-  template: _.template("<h2><%= title %></h2>"),
   initialize: function(){
     this.paragraphsView = new ParagraphsView({collection: this.model.get('paragraphs')});
     this.render();
   },
   render: function(){
-    this.$el.html(this.template(this.model.toJSON()));
     this.$el.append(this.paragraphsView.$el);
     this.paragraphsView.render();
     return this;

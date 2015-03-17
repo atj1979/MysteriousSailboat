@@ -33,12 +33,20 @@ var Paragraphs = Backbone.Collection.extend({
 
 var Document = Backbone.Model.extend({
   initialize: function(resp){
-    var regex = /<p>(.|\n)*?<\/p>/g; //currently splits on paragraph. TODO: include other assets, like images
-    var pars = resp.content.match(regex)
+    
+    // make all links open page in new tab
+    var retargetLinks = resp.content.replace(/(<a)\s/g, '$1 target=\"_blank\" ');
+
+    // split up assets (currently by paragraph or figure)
+    var pars = retargetLinks.match(/<p(.|\n)*?<\/p>|<figure(.|\n)*?<\/figure>/g)
     .map(function(par){
       return new Paragraph({ text : par }); 
     });
     var pars = new Paragraphs(pars);
+
+    // add title
+    pars.unshift(new Paragraph({ text: '<h2 class="title">' + resp.title + '</h2>' }))
+
     this.set('paragraphs', pars);
   }
 });
