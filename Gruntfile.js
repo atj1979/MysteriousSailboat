@@ -87,9 +87,6 @@ module.exports = function(grunt) {
         tasks: ['cssmin']
       }
     },
-
-    
-    
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
