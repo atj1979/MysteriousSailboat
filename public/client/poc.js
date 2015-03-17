@@ -1,5 +1,6 @@
 var mockLoggedInUser = "Fred";
 var converter = Markdown.getSanitizingConverter();
+
 var Annotation = Backbone.Model.extend({
   url: 'http://www.oururl.com/annotations/',
   defaults: {
@@ -9,9 +10,13 @@ var Annotation = Backbone.Model.extend({
 });
 var AnnotationView = Backbone.View.extend({
   className: 'annotation',
-  template: _.template('<%= text %>-<%- username %>'),
+  template: _.template('<div class="annotation-user"><%- username %>: </div>\
+                        <div class="annotation-body"><%= text %></div>'),
   render: function(){
-    this.$el.html(this.template(this.model.toJSON()));
+    var attrs = this.model.toJSON();
+    if (attrs.username === mockLoggedInUser) 
+      attrs.username = 'you';
+    this.$el.html(this.template(attrs));
     return this;
   }
 
@@ -102,9 +107,15 @@ var Paragraph = Backbone.Model.extend({
 });
 var ParagraphView = Backbone.View.extend({
   className: 'paragraph',
-  template: _.template('<div class="body-text"><%= text %></div>'),
+  template: _.template('<div class="count"><%= annotations.length %></div><div class="body-text"><%= text %></div>'),
   initialize: function(){
-    this.annotationsView = new AnnotationsView({collection: this.model.get('annotations')});
+    var annotations = this.model.get('annotations');
+    this.annotationsView = new AnnotationsView({collection: annotations});
+
+    annotations.on('add remove', function(){
+      this.$el.find('.count').text(this.model.get('annotations').length);
+    }, this);
+
   },
   events: { 'click p' : 'clicked'},
 
@@ -115,6 +126,12 @@ var ParagraphView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
     this.$el.append(this.annotationsView.$el);
+
+    // roughly center count (easier than CSS!)
+    $ (function(){ 
+      this.$el.find('.count').animate( { top: this.$el.find('.body-text').height() / 2 - 20, left: -22 }, 0 );
+    }.bind(this))
+
     return this;
   }
 
