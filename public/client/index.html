@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marginalio</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    <script src="models.js"></script>
+    <script src="views.js"></script>
+  </head>
+  <body>
+    <h1>Marginalio</h1>
+    
+    <div id='container'></div>
+
+    <script>
+      $(function(){
+        window.mockLoggedInUser = "Fred";
+        window.converter = Markdown.getSanitizingConverter();
+        
+        var doc = new Document(data);
+        new DocumentView({model: doc, el: $.find('#container')});
+      })
+    </script>
+
+  </body>
+</html>
