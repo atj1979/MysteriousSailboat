@@ -116,6 +116,10 @@ textarea {
   /*border-right: 2px solid black;*/
 }
 
+img{
+  width: 100%;
+}
+
 .count {
   font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
   float: left;
