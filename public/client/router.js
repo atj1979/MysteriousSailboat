@@ -5,8 +5,8 @@ Marginal.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '':       'index',
-    'create': 'create'
+    '':    'index',
+    'add': 'add'
   },
 
   swapView: function(view){
@@ -14,12 +14,12 @@ Marginal.Router = Backbone.Router.extend({
   },
 
   index: function(){
-    // var links = new Shortly.Links();
-    // var linksView = new Shortly.LinksView({ collection: links });
-    // this.swapView(linksView);
+    var docs = new Marginal.Documents();
+    var documentsView = new Marginal.DocumentsView({ collection: docs });
+    this.swapView(documentsView);
   },
 
-  create: function(){
-    this.swapView(/*new Shortly.createLinkView()*/);
+  add: function(){
+    this.swapView(new Marginal.addDocumentView());
   }
 });
