@@ -1,5 +1,5 @@
 var mockLoggedInUser = "Fred";
-var converter = new Showdown.converter();
+var converter = Markdown.getSanitizingConverter();
 var Annotation = Backbone.Model.extend({
   url: 'http://www.oururl.com/annotations/',
   defaults: {
@@ -75,7 +75,7 @@ var FormView = Backbone.View.extend({
 
     this.collection.create({
       username: mockLoggedInUser,
-      text: converter.makeHtml($text.val())
+      text: converter.makeHtml( $text.val() )
     });
     $text.val('');
   },
