@@ -10,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
 
-    <script src="poc.js"></script>
+    <script src="models.js"></script>
+    <script src="views.js"></script>
   </head>
   <body>
     <h1>Marginalio</h1>
@@ -19,8 +20,11 @@
 
     <script>
       $(function(){
-         doc = new Document(data);
-         view = new DocumentView({model: doc, el: $.find('#container')});
+        window.mockLoggedInUser = "Fred";
+        window.converter = Markdown.getSanitizingConverter();
+        
+        var doc = new Document(data);
+        new DocumentView({model: doc, el: $.find('#container')});
       })
     </script>
 
