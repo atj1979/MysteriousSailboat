@@ -12,7 +12,7 @@ app.configure(function() {
   app.set('view engine', 'ejs');
   app.use(partials());
   app.use(express.bodyParser());
-  // app.use(express.static(__dirname + '/public')); // this assumes all client files are in a folder named public
+  app.use(express.static(__dirname + '/public')); // this assumes all client files are in a folder named public
   // app.use(express.session());
 
 });
