@@ -2,7 +2,7 @@
   <div class='navigation'>
   <ul>
     <li><a href='#' class='index'>My Groups</a></li>
-    <li><a href='#' class='create'>New Group</a></li>
+    <li><a href='#' class='add'>New Document</a></li>
   </ul>
     <a href='/logout' class='logout'>Logout</a>
   </div>
@@ -10,7 +10,7 @@
 </script>
 
 
-<script id='link' type='text/x-handlebars-template'>
+<script id='doc' type='text/x-handlebars-template'>
   <img src='/redirect_icon.png'/>
   <div class='info'>
     <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
@@ -21,7 +21,7 @@
 </script>
 
 
-<script id='create' type='text/x-handlebars-template'>
+<script id='add' type='text/x-handlebars-template'>
   <form>
       <input class='text' type='text' name='url'>
       <input type='submit' value='Shorten'>
@@ -43,5 +43,10 @@
 
 
 <script src='/client/app.js'></script>
+<script src='/client/models/document.js'></script>
+<script src='/client/views/documentView.js'></script>
+<script src='/client/views/documentsView.js'></script>
+<script src='/client/views/addDocumentView.js'></script>
+<script src='/client/collections/documents.js'></script>
 <script src='/client/router.js'></script>
 

@@ -3,7 +3,7 @@ window.Marginal = Backbone.View.extend({
 
   events: {
     'click li a.index':  'renderIndexView',
-    'click li a.create': 'renderCreateView'
+    'click li a.add': 'renderAddView'
   },
 
   initialize: function(){
@@ -21,14 +21,17 @@ window.Marginal = Backbone.View.extend({
     return this;
   },
 
+  // Renders index/landing page
   renderIndexView: function(e){
     e && e.preventDefault();
     this.router.navigate('/', { trigger: true });
   },
 
-  renderCreateView: function(e){
+  // View that controls adding new pages
+  renderAddView: function(e){
+    console.log('addView in App');
     e && e.preventDefault();
-    this.router.navigate('/create', { trigger: true });
+    this.router.navigate('/add', { trigger: true });
   },
 
   updateNav: function(routeName){
