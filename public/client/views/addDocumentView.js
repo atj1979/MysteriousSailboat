@@ -4,7 +4,7 @@ Marginal.addDocumentView = Backbone.View.extend({
   template: Templates['add'],
 
   events: {
-    'submit': 'addDoc'
+    // 'submit': 'addDoc'
   },
 
   render: function() {
@@ -14,28 +14,30 @@ Marginal.addDocumentView = Backbone.View.extend({
 
   addDoc: function(e) {
     e.preventDefault();
-    var $form = this.$el.find('form .text');
+    // var $form = this.$el.find('form .text');
 
-// Giving CORS issue
-    var base = 'https://readability.com/api/content/v1/parser?';
-    var url = 'url=' + $form.val();
-    var token = '&token=70168518cd8871d294abb9b81799f8efec18e791';
-    var readability = base+url+token;
-    console.log(readability);
+//     var test = new URI();
+//     console.log(test);
+// // Giving CORS issue
+//     var base = 'https://readability.com/api/content/v1/parser?';
+//     var url = 'url=' + $form.val();
+//     var token = '&token=70168518cd8871d294abb9b81799f8efec18e791';
+//     var readability = base+url+token;
+//     console.log(readability);
 
-    $.ajax({
-      url: readability,
-      type: 'GET',
-      success: function(data, status){console.log(data, status);},
-      error: function(err){console.error('Incomplete GET request',err);}
-    });
+//     $.ajax({
+//       url: readability,
+//       type: 'GET',
+//       success: function(data, status){console.log(data, status);},
+//       error: function(err){console.error('Incomplete GET request',err);}
+//     });
 
-    var doc = new Marginal.Document({ url: $form.val() });
-    doc.on('request', this.startSpinner, this);
-    doc.on('sync', this.success, this);
-    doc.on('error', this.failure, this);
-    // doc.save({}); For db stuff
-    $form.val('');
+//     var doc = new Marginal.Document({ url: $form.val() });
+//     doc.on('request', this.startSpinner, this);
+//     doc.on('sync', this.success, this);
+//     doc.on('error', this.failure, this);
+//     // doc.save({}); For db stuff
+    
   },
 
   success: function(doc) {

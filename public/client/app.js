@@ -3,7 +3,8 @@ window.Marginal = Backbone.View.extend({
 
   events: {
     'click li a.index':  'renderIndexView',
-    'click li a.add': 'renderAddView'
+    'click li a.add': 'renderAddView',
+    'submit': 'readabilityCall'
   },
 
   initialize: function(){
@@ -38,5 +39,13 @@ window.Marginal = Backbone.View.extend({
       .removeClass('selected')
       .filter('.' + routeName)
       .addClass('selected');
+  },
+
+  readabilityCall: function(e){
+    e.preventDefault();
+    var $form = this.$el.find('form .text');
+    this.router.navigate('/addDoc', { trigger: true});
+    console.log($form.val());
+    $form.val('');
   }
 });
