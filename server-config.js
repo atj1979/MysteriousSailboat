@@ -28,6 +28,10 @@ app.get('/', util.checkUser, handler.renderIndex);
 app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
 
+// saving documents
+app.get('/docs', util.checkUser, handler.fetchDocs);
+app.post('/docs', handler.saveDoc);
+
 // signup page routing
 app.get('/signup', handler.signupUserForm);
 app.post('/signup', handler.signupUser);
