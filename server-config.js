@@ -8,12 +8,13 @@ var app = express();
 
 // Express server configuration.
 app.configure(function() {
-  // app.set('views', __dirname = '/views'); // this assumes all views are located in a folder named views
+  app.set('views', __dirname = './views'); // this assumes all views are located in a folder named views
   app.set('view engine', 'ejs');
   app.use(partials());
   app.use(express.bodyParser());
   // app.use(express.static(__dirname + '/public')); // this assumes all client files are in a folder named public
-  // app.use(express.session());
+  app.use(express.cookieParser('ASDFxzhueiioeafsioafsoiaefshefsaiuhfeaihaefsi7fe78y93wfh8afwhi;asefhi'));
+  app.use(express.session());
 
 });
 
