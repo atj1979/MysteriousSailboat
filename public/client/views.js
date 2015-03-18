@@ -101,12 +101,14 @@ var ParagraphView = Backbone.View.extend({
       this.$el.find('.count').text(this.model.get('annotations').length)
                              .animate({opacity: 1}, 'fast');
     }, this);
-
   },
-  events: { 'click' : 'clicked'},
+  events: { 
+    'click': 'clicked'
+  },
 
   clicked: function(){
     //paragraph emits a focus event
+    console.log('heard');
     this.model.focus();
   },
   render: function(){
