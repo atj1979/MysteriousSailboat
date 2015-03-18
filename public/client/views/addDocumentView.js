@@ -15,6 +15,7 @@ Marginal.addDocumentView = Backbone.View.extend({
   addDoc: function(e) {
     e.preventDefault();
     var $form = this.$el.find('form .text');
+
 // Giving CORS issue
     var base = 'https://readability.com/api/content/v1/parser?';
     var url = 'url=' + $form.val();
