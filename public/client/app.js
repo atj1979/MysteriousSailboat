@@ -29,7 +29,6 @@ window.Marginal = Backbone.View.extend({
 
   // View that controls adding new pages
   renderAddView: function(e){
-    console.log('addView in App');
     e && e.preventDefault();
     this.router.navigate('/add', { trigger: true });
   },
