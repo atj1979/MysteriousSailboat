@@ -23,6 +23,8 @@ app.configure(function() {
 
 // Serve the index page when the user navigates to 
 app.get('/', util.checkUser, handler.renderIndex);
+app.post('/addDoc', util.checkUser, handler.readabilityRequest);
+
 
 // login page routing
 app.get('/login', handler.loginUserForm);

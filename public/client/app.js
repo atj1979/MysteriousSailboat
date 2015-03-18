@@ -3,7 +3,7 @@ window.Marginal = Backbone.View.extend({
 
   events: {
     'click li a.index':  'renderIndexView',
-    'click li a.add': 'renderAddView'
+    'click li a.add': 'renderAddView',
   },
 
   initialize: function(){
@@ -39,4 +39,5 @@ window.Marginal = Backbone.View.extend({
       .filter('.' + routeName)
       .addClass('selected');
   }
+
 });
