@@ -16,6 +16,8 @@ Marginal.DocumentsView = Backbone.View.extend({
   },
 
   addOne: function(item){
+    console.log(this.$el);
+    console.log(this.model);
     var view = new Marginal.DocumentView({ model: item });
     this.$el.append(view.render().el);
   }
