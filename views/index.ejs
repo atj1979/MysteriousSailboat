@@ -1,8 +1,8 @@
 <script id='layout' type='text/x-handlebars-template'>
   <div class='navigation'>
   <ul>
-    <li><a href='#' class='index'>My Groups</a></li>
-    <li><a href='#' class='add'>New Document</a></li>
+    <li><a href='#' class='index'>Documents</a></li>
+    <li><a href='#' class='add'>Add Document</a></li>
   </ul>
     <a href='/logout' class='logout'>Logout</a>
   </div>
@@ -11,9 +11,8 @@
 </script>
 
 
-<script id='doc' type='text/x-handlebars-template'>
+<script id='document' type='text/x-handlebars-template'>
   <div class='info'>
-    <div class='word_count'><span class='count'>{{word_count}}</span>Word Count</div>
     <div class='title'>{{title}}</div>
     <div class='domain'>{{domain}}</div>
     <a href='{{url}}'>{{url}}</a>
@@ -24,7 +23,7 @@
 <script id='add' type='text/x-handlebars-template'>
   <form>
       <input class='text' type='text' name='url'>
-      <input type='submit' value='Marginalize'>
+      <input type='submit' value='Annotate'>
   </form>
   <img class='spinner' src='/spiffygif_46x46.gif'>
   <div class='message'></div>
@@ -32,7 +31,7 @@
 
 <script>
   $(function(){
-    new Marginal();
+    new Marginalio();
   });
 
   window.Templates = {};
@@ -48,5 +47,17 @@
 <script src='/client/views/documentsView.js'></script>
 <script src='/client/views/addDocumentView.js'></script>
 <script src='/client/collections/documents.js'></script>
+
+<script src='/client/models/annotation.js'></script>
+<script src='/client/models/paragraph.js'></script>
+<script src='/client/collections/annotations.js'></script>
+<script src='/client/collections/paragraphs.js'></script>
+
+<script src='/client/views/annotationView.js'></script>
+<script src='/client/views/annotationsView.js'></script>
+<script src='/client/views/paragraphView.js'></script>
+<script src='/client/views/paragraphsView.js'></script>
+<script src='/client/views/formView.js'></script>
+
 <script src='/client/router.js'></script>
 

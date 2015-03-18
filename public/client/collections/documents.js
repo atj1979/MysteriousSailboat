@@ -1,10 +1,10 @@
-Marginal.Documents = Backbone.Collection.extend({
-  model: Marginal.Document,
-  url: '/docs'
+Marginalio.Documents = Backbone.Collection.extend({
+  model: Marginalio.Document,
+  url: '/documents'
 });
 
 // hardcode in readability docs
-var a = {
+window.a = {
   "domain": "git-scm.com",
   "next_page_id": null,
   "url": "http://git-scm.com/book/en/v2",
@@ -21,7 +21,7 @@ var a = {
   "title": "Book",
   "rendered_pages": 1
 };
-var b = {
+window.b = {
   "domain": "www.newyorker.com",
   "next_page_id": null,
   "url": "http://www.newyorker.com/culture/culture-desk/this-week-in-cultural-clicks-sushi-cats-post-internet-poetry-and-more?intcid=mod-most-popular",
@@ -38,7 +38,7 @@ var b = {
   "title": "This Week in Cultural Clicks: Sushi Cats, Post-Internet Poetry, and More",
   "rendered_pages": 1
 };
-var c = {
+window.c = {
     "domain": "tbaggery.com",
     "next_page_id": null,
     "url": "http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html",
@@ -55,11 +55,3 @@ var c = {
     "title": "A Note About Git Commit Messages",
     "rendered_pages": 1
 };
-
-// create hardcoded models of readability docs
-var d = new Marginal.Document(a);
-d.save({});
-var e = new Marginal.Document(b);
-e.save({});
-var f = new Marginal.Document(c);
-f.save({});

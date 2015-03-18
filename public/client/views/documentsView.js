@@ -1,13 +1,14 @@
-Marginal.DocumentsView = Backbone.View.extend({
-  className: 'docs',
+Marginalio.DocumentsView = Backbone.View.extend({
+  className: 'documents',
 
   initialize: function(){
-    this.collection.on('sync', this.addAll, this);
+    this.addAll();
+    // this.collection.on('sync', this.addAll, this);
     this.collection.fetch();
   },
 
   render: function() {
-    this.$el.empty();
+    // this.$el.empty();  // what are the consequences of commenting htis out?
     return this;
   },
 
@@ -16,10 +17,8 @@ Marginal.DocumentsView = Backbone.View.extend({
   },
 
   addOne: function(item){
-    console.log(this.$el);
-    console.log(this.model);
-    var view = new Marginal.DocumentView({ model: item });
-    this.$el.append(view.render().el);
+    var view = new Marginalio.DocumentView({ model: item });
+    this.$el.append( view.render().el );
   }
 });
 

@@ -1,12 +1,14 @@
-Marginal.Router = Backbone.Router.extend({
+Marginalio.Router = Backbone.Router.extend({
 
   initialize: function(options){
     this.$el = options.el;
+    this.focalDoc = null;
   },
 
   routes: {
     '':    'index',
-    'add': 'add'
+    'add': 'add',
+    'document': 'document'
   },
 
   swapView: function(view){
@@ -14,18 +16,30 @@ Marginal.Router = Backbone.Router.extend({
   },
 
   index: function(){
-    var docs = new Marginal.Documents();
-    
+    var documents = new Marginalio.Documents();
     // hardcode models into new collection
-    docs.add(d);
-    docs.add(e);
-    docs.add(f);
+    documents.add(a);
+    documents.add(b);
+    documents.add(c);
 
-    var documentsView = new Marginal.DocumentsView({ collection: docs });
+    var documentsView = new Marginalio.DocumentsView({ collection: documents });
     this.swapView(documentsView);
+
+    documents.on('focus', function(doc){
+      this.focalDoc = doc;
+      this.navigate('/document', { trigger: true });
+    }, this);
   },
 
   add: function(){
-    this.swapView(new Marginal.addDocumentView());
+    this.swapView(new Marginalio.addDocumentView());
+  },
+  document: function() {
+
+    window.mockLoggedInUser = "Fred";
+    window.converter = Markdown.getSanitizingConverter();
+
+    var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs') });
+    this.swapView(view);
   }
 });
