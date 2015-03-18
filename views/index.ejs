@@ -1,0 +1,52 @@
+<script id='layout' type='text/x-handlebars-template'>
+  <div class='navigation'>
+  <ul>
+    <li><a href='#' class='index'>My Groups</a></li>
+    <li><a href='#' class='add'>New Document</a></li>
+  </ul>
+    <a href='/logout' class='logout'>Logout</a>
+  </div>
+  <div id='available-docs'></div>
+  <div id='container'></div>
+</script>
+
+
+<script id='doc' type='text/x-handlebars-template'>
+  <div class='info'>
+    <div class='word_count'><span class='count'>{{word_count}}</span>Word Count</div>
+    <div class='title'>{{title}}</div>
+    <div class='domain'>{{domain}}</div>
+    <a href='{{url}}'>{{url}}</a>
+  </div>
+</script>
+
+
+<script id='add' type='text/x-handlebars-template'>
+  <form>
+      <input class='text' type='text' name='url'>
+      <input type='submit' value='Marginalize'>
+  </form>
+  <img class='spinner' src='/spiffygif_46x46.gif'>
+  <div class='message'></div>
+</script>
+
+<script>
+  $(function(){
+    new Marginal();
+  });
+
+  window.Templates = {};
+  $('[type="text/x-handlebars-template"]').each(function(index, div){
+    Templates[div.id] = Handlebars.compile(div.innerHTML);
+  });
+</script>
+
+
+<script src='/client/app.js'></script>
+<script src='/client/models/document.js'></script>
+<script src='/client/views/documentView.js'></script>
+<script src='/client/views/documentsView.js'></script>
+<script src='/client/views/addDocumentView.js'></script>
+<script src='/client/collections/documents.js'></script>
+<script src='/client/router.js'></script>
+
