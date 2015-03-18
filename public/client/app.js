@@ -1,16 +1,16 @@
-window.Marginal = Backbone.View.extend({
+window.Marginalio = Backbone.View.extend({
   template: Templates.layout,
 
   events: {
     'click li a.index':  'renderIndexView',
-    'click li a.add': 'renderAddView'
+    'click li a.add':    'renderAddView'
   },
 
   initialize: function(){
-    console.log( 'Marginal is running' );
+    console.log( 'Marginalio is running' );
     $('body').append(this.render().el);
 
-    this.router = new Marginal.Router({ el: this.$el.find('#container') });
+    this.router = new Marginalio.Router({ el: this.$el.find('#container') });
     this.router.on('route', this.updateNav, this);
 
     Backbone.history.start({ pushState: true });
