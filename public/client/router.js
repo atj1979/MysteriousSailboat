@@ -17,11 +17,7 @@ Marginalio.Router = Backbone.Router.extend({
 
   index: function(){
     var documents = new Marginalio.Documents();
-    // hardcode models into new collection
-    documents.add(a);
-    documents.add(b);
-    documents.add(c);
-
+    
     var documentsView = new Marginalio.DocumentsView({ collection: documents });
     this.swapView(documentsView);
 
