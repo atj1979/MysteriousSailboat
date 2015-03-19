@@ -22,9 +22,11 @@ Marginalio.addDocumentView = Backbone.View.extend({
       type: 'POST',
       data: $form,
       success: function(data, status){
-        console.log(JSON.parse(data), status);
         var doc = new Marginalio.Document(JSON.parse(data));
-        doc.save({});
+        doc.on('request', this.startSpinner, this);
+        doc.on('sync', this.success, this);
+        doc.on('error', this.failure, this);
+        doc.save();
       },
       error: function(err){
         console.error('Incomplete POST request',err);

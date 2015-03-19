@@ -2,8 +2,8 @@ Marginalio.DocumentsView = Backbone.View.extend({
   className: 'documents',
 
   initialize: function(){
-    this.addAll();
-    // this.collection.on('sync', this.addAll, this);
+    // this.addAll();
+    this.collection.on('sync', this.addAll, this);
     this.collection.fetch();
   },
 
