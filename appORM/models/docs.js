@@ -16,6 +16,7 @@ var docSchema = mongoose.Schema({
   lead_image_url:  String,
   title:  String,
   rendered_pages:  String,
+  paragraphs: Array
 });
 
 var Doc = mongoose.model('Doc', docSchema);
