@@ -16,28 +16,21 @@ Marginalio.addDocumentView = Backbone.View.extend({
     e.preventDefault();
     var $form = this.$el.find('form .text');
 
-    var doc = new Marginalio.Document({ url: $form.val() });
-    doc.on('request', this.startSpinner, this);
-    doc.on('sync', this.success, this);
-    doc.on('error', this.failure, this);
-    doc.save({}); 
-    $form.val('');
-
     // Makes call to Readability API through server
-    // $.ajax({
-    //   url: '/addDoc',
-    //   type: 'POST',
-    //   data: $form,
-    //   success: function(data, status){
-    //     console.log(data, status);
-    //     var doc = new Marginal.Document(data);
-    //     doc.save({});
-    //   },
-    //   error: function(err){
-    //     console.error('Incomplete POST request',err);
-    //   }
-    // });
-    // $form.val('');
+    $.ajax({
+      url: '/addDoc',
+      type: 'POST',
+      data: $form,
+      success: function(data, status){
+        console.log(JSON.parse(data), status);
+        var doc = new Marginalio.Document(JSON.parse(data));
+        doc.save({});
+      },
+      error: function(err){
+        console.error('Incomplete POST request',err);
+      }
+    });
+    $form.val('');
   },
 
   success: function(doc) {

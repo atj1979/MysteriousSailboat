@@ -31,8 +31,8 @@ app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
 
 // saving documents
-app.get('/docs', util.checkUser, handler.fetchDocs);
-app.post('/docs', handler.saveDoc);
+app.get('/documents', util.checkUser, handler.fetchDocs);
+app.post('/documents', handler.saveDoc);
 
 // signup page routing
 app.get('/signup', handler.signupUserForm);
