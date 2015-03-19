@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
-
-//Mongo URI set in Azure as MONGOLAB_URI in the connection string section, which is why the prefex  CUSTOMCONNSTR_MONGOLAB_URI is added.
+//For local setup/testing, install mongodb using homebrew.  You may need to create a folder called mongodb-data in your file system
+//Create a mongodb connection with terminal command 'mongod --dbpath ~/mongodb-data'
+//Mongo URI set in Azure as MONGOLAB_URI in the connection string section, which is why the prefex CUSTOMCONNSTR is added.
 mongoURI = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost/usr/local/mongodb-data';
 mongoose.connect(mongoURI);
 
