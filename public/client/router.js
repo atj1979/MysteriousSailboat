@@ -34,8 +34,7 @@ Marginalio.Router = Backbone.Router.extend({
 
     window.mockLoggedInUser = "Fred";
     window.converter = Markdown.getSanitizingConverter();
-
-    var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs') });
+    var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs'), 'doc': this.focalDoc });
     this.swapView(view);
-  }
+  },
 });

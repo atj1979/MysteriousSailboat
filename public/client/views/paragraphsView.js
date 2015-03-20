@@ -1,6 +1,7 @@
 Marginalio.ParagraphsView = Backbone.View.extend({
 
-  initialize: function(){
+  initialize: function(options){
+    this.doc = options.doc;
     this.focalPar = null;
     this.collection.on('focus', function(paragraph){
 
@@ -15,9 +16,10 @@ Marginalio.ParagraphsView = Backbone.View.extend({
 
   },
   render: function(){
+    var doc = this.doc;
     this.$el.append(
       this.collection.map(function(paragraph){
-        var x = new Marginalio.ParagraphView({model: paragraph});
+        var x = new Marginalio.ParagraphView({model: paragraph, 'doc': doc});
         x.render();
         return x.$el;
       })
