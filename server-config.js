@@ -24,6 +24,7 @@ app.configure(function() {
 // Serve the index page when the user navigates to 
 app.get('/', util.checkUser, handler.renderIndex);
 app.post('/addDoc', util.checkUser, handler.readabilityRequest);
+app.post('/deleteDoc', util.checkUser, handler.deleteDocument);
 
 
 // login page routing
