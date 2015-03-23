@@ -13,6 +13,7 @@ Marginalio.DocumentsView = Backbone.View.extend({
   },
 
   addAll: function(){
+    // console.log("COLLECTION", this.collection.models);
     this.collection.forEach(this.addOne, this);
   },
 
