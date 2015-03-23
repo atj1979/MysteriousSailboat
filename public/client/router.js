@@ -17,11 +17,7 @@ Marginalio.Router = Backbone.Router.extend({
 
   index: function(){
     var documents = new Marginalio.Documents();
-    // hardcode models into new collection
-    documents.add(a);
-    documents.add(b);
-    documents.add(c);
-
+    
     var documentsView = new Marginalio.DocumentsView({ collection: documents });
     this.swapView(documentsView);
 
@@ -38,8 +34,7 @@ Marginalio.Router = Backbone.Router.extend({
 
     window.mockLoggedInUser = "Fred";
     window.converter = Markdown.getSanitizingConverter();
-
-    var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs') });
+    var view = new Marginalio.ParagraphsView({collection: this.focalDoc.get('paragraphs'), 'doc': this.focalDoc });
     this.swapView(view);
-  }
+  },
 });
