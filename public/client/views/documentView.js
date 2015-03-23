@@ -3,6 +3,7 @@ Marginalio.DocumentView = Backbone.View.extend({
 
   template: Templates.document,
   events: {
+    // select the .info class for showDoc trigger. If the trigger is just click, clicking the delete button would show the document instead of deleting.
     'click .info' : 'showDoc',
     'click #deleteButton' : 'deleteDocument'
   },
@@ -15,5 +16,10 @@ Marginalio.DocumentView = Backbone.View.extend({
   },
   deleteDocument: function() {
     console.log("BUTTON CLICKED");
+    // Trigger the model deletion event.
+    // this.trigger('deletion');
+    // Delete the document.
+    this.remove();
+    this.destroy();
   }
 });

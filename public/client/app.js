@@ -4,7 +4,6 @@ window.Marginalio = Backbone.View.extend({
   events: {
     'click li a.index':  'renderIndexView',
     'click li a.add': 'renderAddView',
-    // 'click #deleteButton': 'deleteDocument'
   },
 
   initialize: function(){
