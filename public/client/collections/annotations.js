@@ -19,7 +19,7 @@
 
 Marginalio.Annotations = Backbone.Collection.extend({
   model: Marginalio.Annotation,
-  url: '/', //documents',
+  url: '/documents',
   show: function(){
     this.trigger('show', this);
   },
