@@ -6,6 +6,7 @@ Marginalio.ParagraphView = Backbone.View.extend({
     this.annotationsView = new Marginalio.AnnotationsView({collection: annotations});
     var doc = options.doc;
 
+
     annotations.on('add remove', function(){
       // console.log('document model is:', doc);
       // console.log('annotation model:', annotations.models);
@@ -24,7 +25,7 @@ Marginalio.ParagraphView = Backbone.View.extend({
       doc.save();
 
       this.$el.find('.count').text(this.model.get('annotations').length)
-                             .animate({opacity: 1}, 'fast');
+      .animate({opacity: 1}, 'fast');
     }, this);
   },
   events: { 
@@ -40,11 +41,13 @@ Marginalio.ParagraphView = Backbone.View.extend({
 
     // roughly center annotation count (easier than CSS!)
     $ (function(){ 
-      var neighborHeight = this.$el.find('.body-text').height();
-      this.$el.find('.count').animate( {
-                                         top: neighborHeight / 2 - 14,
-                                         left: -22
-                                       }, 0 );
+      var neighborHeight = this.$el.find('.body-text').first().height();
+
+      var length = this.model.get('annotations').length || '';
+      this.$el.find('.count').text(length).animate( {
+       top: 22,
+       left: -22
+     }, 0 );
     }.bind(this))
 
     return this;

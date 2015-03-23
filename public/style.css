@@ -1,67 +1,8 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, /* ol, ul, li,*/
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-/*ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}*/
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/**** shortly css ***/
-body {
-  margin: 0;
-  margin-top: 10px;
-  font-family: arial, sans-serif;
-}
 
 a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
-}
-
-h1 {
-  font-style: italic;
-  margin-bottom: 10px;
 }
 
 .navigation {
@@ -106,46 +47,6 @@ h1 {
   margin-top: 10px;
 }
 
-.link {
-  clear: both;
-  margin-bottom: 5px;
-  padding: 5px;
-  min-height: 50px;
-}
-
-.link:hover {
-  background-color: #efe;
-}
-
-.link img {
-  float: left;
-  margin: 0 5px;
-}
-
-.link .visits {
-  float: right;
-  margin-right: 10px;
-  margin-left: 20px;
-}
-
-.link .visits .count {
-  font-size: 46px;
-  font-weight: 600;
-}
-
-.link .title {
-  font-weight: 600;
-}
-
-.link .original {
-  color: #aaa;
-  font-size: 12px;
-}
-
-.link .info {
-  margin-left: 55px;
-}
-
 form {
   margin: 10px;
 }
@@ -186,6 +87,20 @@ form input[type=text], form input[type=password] {
 }
 
 
+/* document view */
+
+.document .info, .document .title, .document .domain {
+  display: inline-block;
+  margin: 5px;
+
+}
+
+.newspaper {
+  height: 30px;
+  width: auto;
+}
+
+
 /* new CSS */
 
 body {
@@ -219,7 +134,6 @@ a:active {
 .paragraph {
   clear: left;
   position: relative;
-  z-index: 10;
 }
 
 .body-text :hover{
@@ -233,10 +147,13 @@ textarea {
 }
 
 .annotations-container {
+  padding-top: 1em;
   float: right;
   width: 35%;
   padding-left: 3%;
   opacity: 0;
+  font-size:16px;
+  line-height: 1em;
   /*border-left: 2px solid black;*/
 }
 
@@ -246,14 +163,14 @@ textarea {
 }
 
 .annotation-user {
-
+  font-weight: bold;
+  padding-bottom: 0px;
 }
 
 .body-text  {
   float:left;
   width: 55%;
   padding-right: 3%;
-  margin-bottom: 1em;
   /*border-right: 2px solid black;*/
 }
 
@@ -265,7 +182,6 @@ img{
   font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
   float: left;
   position: absolute;
-  opacity: 0;
 }
 
 .has-annotations {
