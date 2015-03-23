@@ -29,8 +29,12 @@ app.post('/addDoc', util.checkUser, handler.readabilityRequest);
 app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
 
+// logout user
+app.get('/logout', handler.logoutUser);
+
 // saving documents
 app.get('/documents', util.checkUser, handler.fetchDocs);
+
 app.post('/documents', handler.saveDoc);
 app.delete('/documents/:id', handler.deleteDocument);
 
