@@ -1,5 +1,6 @@
 Marginalio.Document = Backbone.Model.extend({
   urlRoot: '/documents',
+  idAttribute: '_id',
   initialize: function(params){
     if(params.paragraphs){      
       var pars = _.map(params.paragraphs, function(par){

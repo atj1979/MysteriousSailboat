@@ -24,8 +24,6 @@ app.configure(function() {
 // Serve the index page when the user navigates to 
 app.get('/', util.checkUser, handler.renderIndex);
 app.post('/addDoc', util.checkUser, handler.readabilityRequest);
-app.post('/deleteDoc', util.checkUser, handler.deleteDocument);
-
 
 // login page routing
 app.get('/login', handler.loginUserForm);
@@ -34,6 +32,7 @@ app.post('/login', handler.loginUser);
 // saving documents
 app.get('/documents', util.checkUser, handler.fetchDocs);
 app.post('/documents', handler.saveDoc);
+app.delete('/documents/:id', handler.deleteDocument);
 
 // signup page routing
 app.get('/signup', handler.signupUserForm);
