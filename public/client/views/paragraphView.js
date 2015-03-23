@@ -33,6 +33,7 @@ Marginalio.ParagraphView = Backbone.View.extend({
   },
 
   clicked: function(){
+    console.log('triggering');
     this.model.focus();
   },
   render: function(){

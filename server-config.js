@@ -25,7 +25,6 @@ app.configure(function() {
 app.get('/', util.checkUser, handler.renderIndex);
 app.post('/addDoc', util.checkUser, handler.readabilityRequest);
 
-
 // login page routing
 app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
@@ -33,6 +32,7 @@ app.post('/login', handler.loginUser);
 // saving documents
 app.get('/documents', util.checkUser, handler.fetchDocs);
 app.post('/documents', handler.saveDoc);
+app.delete('/documents/:id', handler.deleteDocument);
 
 // signup page routing
 app.get('/signup', handler.signupUserForm);
