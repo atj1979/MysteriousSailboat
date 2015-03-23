@@ -3,13 +3,13 @@ Marginalio.DocumentsView = Backbone.View.extend({
 
   initialize: function(){
     this.collection.on('sync', this.addAll, this);
-    this.collection.on('remove', this.render, this);
+    this.listenTo(this.collection, 'remove', this.render);
     this.collection.fetch();
   },
 
   render: function() {
     // this.$el.empty();  // what are the consequences of commenting htis out?
-    console.log('render called');
+    console.log('render called', this.collection);
     return this;
   },
 
