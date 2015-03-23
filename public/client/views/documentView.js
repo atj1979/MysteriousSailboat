@@ -15,11 +15,9 @@ Marginalio.DocumentView = Backbone.View.extend({
     return this;
   },
   deleteDocument: function() {
-    console.log("BUTTON CLICKED");
-    // Trigger the model deletion event.
-    // this.trigger('deletion');
-    // Delete the document.
+    // Trigger the model deletion event by removing this model from the collection.
     this.remove();
+    // Delete the document.
     this.destroy();
   }
 });

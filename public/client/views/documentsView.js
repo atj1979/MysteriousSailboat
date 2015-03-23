@@ -2,11 +2,9 @@ Marginalio.DocumentsView = Backbone.View.extend({
   className: 'documents',
 
   initialize: function(){
-    // this.addAll();
     this.collection.on('sync', this.addAll, this);
-    this.collection.on('add remove', this.render, this);
+    this.collection.on('remove', this.render, this);
     this.collection.fetch();
-    this.on('deletion', this.addAll, this);
   },
 
   render: function() {
@@ -16,7 +14,6 @@ Marginalio.DocumentsView = Backbone.View.extend({
   },
 
   addAll: function(){
-    // console.log("COLLECTION", this.collection.models);
     this.collection.forEach(this.addOne, this);
   },
 
@@ -24,10 +21,6 @@ Marginalio.DocumentsView = Backbone.View.extend({
     var view = new Marginalio.DocumentView({ model: item });
     this.$el.append( view.render().el );
   }
-  // deletion: function(){
-  //   render();
-  //   console.log('rerendered');
-  // }
 });
 
 
