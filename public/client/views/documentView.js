@@ -3,7 +3,8 @@ Marginalio.DocumentView = Backbone.View.extend({
 
   template: Templates.document,
   events: {
-    'click' : 'showDoc'
+    'click .info' : 'showDoc',
+    'click #deleteButton' : 'deleteDocument'
   },
   showDoc: function() {
     this.model.focus();
@@ -11,5 +12,8 @@ Marginalio.DocumentView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this;
+  },
+  deleteDocument: function() {
+    console.log("BUTTON CLICKED");
   }
 });
