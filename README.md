@@ -4,9 +4,9 @@
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: David Hammer
+  - __Scrum Master__: Chad Fong
+  - __Development Team Members__: Michael Roberts, Tony Johnson
 
 ## Table of Contents
 
@@ -24,11 +24,11 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node
+- Express
+- Backbone
+- MongoDB
+- Mongoose
 
 ## Development
 
@@ -44,7 +44,7 @@ bower install
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/MysteriousSailboat/MysteriousSailboat/issues)
 
 
 ## Contributing

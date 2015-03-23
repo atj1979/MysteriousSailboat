@@ -1,0 +1,63 @@
+<script id='layout' type='text/x-handlebars-template'>
+  <div class='navigation'>
+  <ul>
+    <li><a href='#' class='index'>Documents</a></li>
+    <li><a href='#' class='add'>Add Document</a></li>
+  </ul>
+    <a href='/logout' class='logout'>Logout</a>
+  </div>
+  <div id='available-docs'></div>
+  <div id='container'></div>
+</script>
+
+
+<script id='document' type='text/x-handlebars-template'>
+  <div class='info'>
+    <div class='title'>{{title}}</div>
+    <div class='domain'>{{domain}}</div>
+    <a href='{{url}}'>{{url}}</a>
+  </div>
+</script>
+
+
+<script id='add' type='text/x-handlebars-template'>
+  <form>
+      <input class='text' type='text' name='url'>
+      <input type='submit' value='Annotate'>
+  </form>
+  <img class='spinner' src='/spiffygif_46x46.gif'>
+  <div class='message'></div>
+</script>
+
+<script>
+  $(function(){
+    new Marginalio();
+  });
+
+  window.Templates = {};
+  $('[type="text/x-handlebars-template"]').each(function(index, div){
+    Templates[div.id] = Handlebars.compile(div.innerHTML);
+  });
+</script>
+
+
+<script src='/client/app.js'></script>
+<script src='/client/models/document.js'></script>
+<script src='/client/views/documentView.js'></script>
+<script src='/client/views/documentsView.js'></script>
+<script src='/client/views/addDocumentView.js'></script>
+<script src='/client/collections/documents.js'></script>
+
+<script src='/client/models/annotation.js'></script>
+<script src='/client/models/paragraph.js'></script>
+<script src='/client/collections/annotations.js'></script>
+<script src='/client/collections/paragraphs.js'></script>
+
+<script src='/client/views/annotationView.js'></script>
+<script src='/client/views/annotationsView.js'></script>
+<script src='/client/views/paragraphView.js'></script>
+<script src='/client/views/paragraphsView.js'></script>
+<script src='/client/views/formView.js'></script>
+
+<script src='/client/router.js'></script>
+
